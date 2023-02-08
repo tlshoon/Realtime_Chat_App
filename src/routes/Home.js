@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Tweet from "../components/Tweet";
 import { dbService } from "../fbase";
 
 const Home = ({ userObj }) => {
@@ -55,9 +56,7 @@ const Home = ({ userObj }) => {
       </form>
       <div>
         {tweets.map((tweet) => (
-          <div key={tweet.id}>
-                <h4>{tweet.text}</h4>
-          </div>
+            <Tweet key={tweet.id} Tweetobj={tweet} isOwner={tweet.creatorId === userObj.uid} />
         ))}
       </div>
     </div>
