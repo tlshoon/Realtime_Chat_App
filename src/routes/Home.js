@@ -20,7 +20,7 @@ const Home = ({ userObj }) => {
   useEffect(() => {
     // 컴포넌트 마운트 됐을 때 실행
     // getTweets();
-    dbService.collection("tweets").orderBy("createdAt","desc").onSnapshot((snapshot) => {    // 스냅샷을 쓰면 리렌더 하지 않아도 됨
+    dbService.collection("tweets").orderBy("createdAt","desc").onSnapshot((snapshot) => {    // 데이터베이스에 무슨 일이 있을 때 알림을 받는 기능, 스냅샷을 쓰면 리렌더 하지 않아도 됨
         const tweetArray = snapshot.docs.map((doc) => ({
             id: doc.id,
             ...doc.data(),
