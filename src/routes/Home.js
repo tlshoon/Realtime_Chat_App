@@ -22,7 +22,7 @@ const Home = ({ userObj }) => {
     // getTweets();
     dbService
       .collection("tweets")
-      .orderBy("createdAt", "desc")
+      .orderBy("createdAt", "desc")  // asc로하면 최신이 밑에
       .onSnapshot((snapshot) => {
         // 데이터베이스에 무슨 일이 있을 때 알림을 받는 기능, 스냅샷을 쓰면 리렌더 하지 않아도 됨
         const tweetArray = snapshot.docs.map((doc) => ({
