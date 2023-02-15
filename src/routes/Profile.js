@@ -8,6 +8,7 @@ const Profile = () => {
         authService.signOut();
         // history.push('/');
     }
+
   return (
     <>
       <button onClick={onLogOutClick}>Log Out</button>

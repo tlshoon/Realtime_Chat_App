@@ -27,7 +27,7 @@ function App() {
   return(
     <>  
     {init ? <AppRouter isLoggedIn={isLoggedIn} userObj={userObj} /> : "Initializing..."}   {/* props 내려주기 */}
-    <footer>&copy; {new Date().getFullYear()} Twitter</footer>
+    
     </>
   )
 }
